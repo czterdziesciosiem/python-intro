@@ -13,9 +13,11 @@ def count_words(text):
     text = text.strip()
 
     # Używamy wyrażenia regularnego, które zlicza słowa
+    # \w+ to słowa składające się z liter i cyfr, \w uwzględnia również znaki diakrytyczne w polskim alfabecie
     words = re.findall(r'\b\w+\b', text)
 
     return len(words)
+
 
 
 
