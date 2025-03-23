@@ -11,13 +11,14 @@ def count_words(text):
     # Usuwamy nadmiarowe białe znaki na początku i końcu
     text = text.strip()
 
-    # Usuwamy interpunkcję
-    text = re.sub(r'[^\w\s]', '', text)  # Usuwamy wszystko, co nie jest literą, cyfrą lub spacją
+    # Usuwamy znaki interpunkcyjne tylko na końcu i początku słów
+    text = re.sub(r'[^\w\s]+', '', text)  # Usuwamy wszystkie znaki, które nie są literami, cyframi lub spacjami
 
     # Zliczamy słowa
     words = re.findall(r'\b\w+\b', text)
 
     return len(words)
+
 
 
 
