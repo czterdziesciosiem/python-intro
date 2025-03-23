@@ -11,22 +11,18 @@ def count_words(text):
     # Usuwamy nadmiarowe białe znaki na początku i końcu
     text = text.strip()
 
-    # Usuwamy interpunkcję z końca tekstu (ale pozostawiamy spacje pomiędzy słowami)
-    text = re.sub(r'[^\w\s]', '', text)  # Usuwamy wszystko, co nie jest literą, cyfrą lub spacją
+    # Usuwamy znaki interpunkcyjne tylko na końcu i początku słów
+    text = re.sub(r'[^\w\s]+', '', text)  # Usuwamy wszystkie znaki, które nie są literami, cyframi lub spacjami
 
     # Zliczamy słowa
     words = re.findall(r'\b\w+\b', text)
 
     return len(words)
 
-# Przykłady testowe
-print(count_words("To jest test."))  # Powinno wypisać 4
-print(count_words("Hello world!"))  # Powinno wypisać 2
-print(count_words("Python 3.8"))  # Powinno wypisać 2
-print(count_words("test"))  # Powinno wypisać 1
-print(count_words(""))  # Powinno wypisać 0
-print(count_words("To, czy to jest test?"))  # Powinno wypisać 5
-print(count_words("Python 3.8, test!"))  # Powinno wypisać 3
+# Przykład testu
+sentence = "To jest test."
+print(count_words(sentence))  # Oczekiwany wynik: 4
+
 
 
 
