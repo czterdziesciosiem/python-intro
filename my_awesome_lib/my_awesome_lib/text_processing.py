@@ -11,10 +11,11 @@ def count_words(text):
     # Usuwamy nadmiarowe białe znaki na początku i końcu
     text = text.strip()
 
-    # Słowa to ciągi alfanumeryczne (litery i cyfry), a interpunkcja nie jest częścią słowa
+    # Zmieniamy wyrażenie regularne, aby ignorować interpunkcję
     words = re.findall(r'\b\w+\b', text)
 
     return len(words)
+
 
 
 
