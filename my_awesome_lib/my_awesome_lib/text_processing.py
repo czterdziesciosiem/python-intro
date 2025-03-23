@@ -9,9 +9,10 @@ def count_words(text):
     :param text: Tekst, w którym będą liczone słowa.
     :return: Liczba słów w tekście.
     """
-    # Używamy wyrażenia regularnego, aby znaleźć wszystkie słowa (ciągi literowe, liczbowe) oddzielone spacjami lub interpunkcją
+    # Używamy wyrażenia regularnego, aby znaleźć wszystkie słowa (ciągi alfanumeryczne), ignorując interpunkcję.
     words = re.findall(r'\b\w+\b', text)
     return len(words)
+
 
 
  
